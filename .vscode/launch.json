@@ -1,0 +1,50 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+   "configurations": [
+        {
+            "args": [
+                "--root",
+                "../../00_Datasets/av1/",
+                "--embed_dim",
+                "64",
+                "--train_batch_size",
+                "32",
+                "--num_workers",
+                "24",
+                "--max_epochs",
+                "20",
+                "--gpus",
+                "8"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "name": "Python: Train",
+            "program": "train.py",
+            "request": "launch",
+            "type": "debugpy"
+        },
+        {
+            "args": [
+                "--root",
+                "../../00_Datasets/av1/",
+                "--batch_size",
+                "32",
+                "--ckpt_path",
+                "./lightning_logs/version_2/checkpoints/epoch=19-step=16100.ckpt",
+                "--num_workers",
+                "96",
+                "--gpus",
+                "1"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "name": "Python: Eval",
+            "program": "eval.py",
+            "request": "launch",
+            "type": "debugpy"
+        },
+    ],
+}
